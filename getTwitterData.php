@@ -30,5 +30,5 @@ if($referrer !== "https://api.twitter.com/oauth/authorize") {
 	$_SESSION['twitterdata'] = $arraytwitter;
 	$_SESSION['noti_type'] = 'twitter';
 	header('Status: 302', true);
-	header('Location: ' . $config['root_location'] . '/getSession.php');
+	header('Location: ' . $config['root_location'] . 'getSession.php');
 }
