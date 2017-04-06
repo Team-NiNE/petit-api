@@ -17,8 +17,8 @@ if($referrer !== "https://api.twitter.com/oauth/authorize") {
 	$consumer_key = $config['consumer_key'];
 	$consumer_secret = $config['consumer_secret'];
 	$oauth_verifier = $_GET['oauth_verifier'];
-	$token_secret = $_COOKIE['token_secret'];
-	$oauth_token = $_COOKIE['oauth_token'];
+	$token_secret = $_SESSION['token_secret'];
+	$oauth_token = $_SESSION['oauth_token'];
 	$connection = new TwitterOAuth($consumer_key, $consumer_secret, $oauth_token, $token_secret);
 	$access_token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $oauth_verifier));
 	$accessToken=$access_token['oauth_token'];

@@ -19,6 +19,8 @@ setcookie("token_secret", " ", time()-3600);
 setcookie("token_secret", $token_secret, time()+60*10);
 setcookie("oauth_token", " ", time()-3600);
 setcookie("oauth_token", $oauth_token, time()+60*10);
+$_SESSION['oauth_token'] = $oauth_token;
+$_SESSION['token_secret'] = $token_secret;
 $url = $connection->url("oauth/authorize", array("oauth_token" => $oauth_token));
 header('Location: ' . $url);
 ?>
