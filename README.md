@@ -1,5 +1,5 @@
 # petit-api
-osu!petit's API Site. 
+osu!petit's API Site.  
 License under AGPL. More information in [Document](LICENSE)
 
 ## Installation
