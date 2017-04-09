@@ -1,10 +1,9 @@
 # petit-api
-osu!petit's API Site.
+osu!petit's API Site. 
 License under AGPL. More information in [Document](LICENSE)
 
 ## Installation
-petit-api need composer. please install composer from [Official Download Site](https://getcomposer.org/download/).
-
+petit-api need composer. please install composer from [Official Download Site](https://getcomposer.org/download/).  
 before install, you can install required dependencies to `composer update`.
 
 ## Configure
