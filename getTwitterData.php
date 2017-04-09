@@ -7,15 +7,15 @@ ini_set('session.cookie_domain', '.'.giveHost($_SERVER['SERVER_NAME']));
 
 require "vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
-$config = require_once 'config.php';
-/*$referrer = $_SERVER['HTTP_REFERER'];
+$config = parse_ini_file('config.ini', true);
+$referrer = $_SERVER['HTTP_REFERER'];
 if($referrer !== "https://api.twitter.com/oauth/authorize") {
 	header('Status: 302', true);
-	header('Location: ' . $config['root_location']);
-} else {*/
+	header('Location: ' . $config['site']['main_site']);
+} else {
 	session_start();
-	$consumer_key = $config['consumer_key'];
-	$consumer_secret = $config['consumer_secret'];
+	$consumer_key = $config['twitter']['key'];
+	$consumer_secret = $config['twitter']['secret'];
 	$oauth_verifier = $_GET['oauth_verifier'];
 	$token_secret = $_SESSION['token_secret'];
 	$oauth_token = $_SESSION['oauth_token'];
@@ -31,5 +31,5 @@ if($referrer !== "https://api.twitter.com/oauth/authorize") {
 	$_SESSION['twitterdata'] = $arraytwitter;
 	$_SESSION['noti_type'] = 'twitter';
 	header('Status: 302', true);
-	header('Location: ' . $config['root_location'] . 'getSession.php');
-//}
+	header('Location: ' . $config['site']['apply_root'] . 'getSession.php');
+}

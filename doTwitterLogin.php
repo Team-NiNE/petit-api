@@ -8,11 +8,11 @@ session_start();
 
 require "vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
-$config = require_once 'config.php';
-$consumer_key = $config['consumer_key'];
-$consumer_secret = $config['consumer_secret'];
+$config = parse_ini_file('config.ini', true);
+$consumer_key = $config['twitter']['key'];
+$consumer_secret = $config['twitter']['secret'];
 $connection = new TwitterOAuth($consumer_key, $consumer_secret);
-$request_token = $connection->oauth("oauth/request_token", array("oauth_callback" => $config['api_root'] . 'getTwitterData.php'));
+$request_token = $connection->oauth("oauth/request_token", array("oauth_callback" => $config['site']['api_root'] . 'getTwitterData.php'));
 $oauth_token=$request_token['oauth_token'];
 $token_secret=$request_token['oauth_token_secret'];
 setcookie("token_secret", " ", time()-3600);
