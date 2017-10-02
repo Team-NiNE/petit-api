@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - '7.1'
+
+install:
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+
+script:
+  - phpcs -p -s
+
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify

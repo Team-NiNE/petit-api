@@ -1,8 +1,0 @@
-[twitter]
-key = "your-awesome-consumer-key"
-secret = "your-awesome-consumer-secret"
-
-[site]
-main_site = "your-awesome-main-site"
-apply_root = "your-awesome-apply-root"
-api_root = "your-awesome-api-root"

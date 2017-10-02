@@ -1,13 +1,14 @@
 # petit-api
 osu!petit's API Site.  
-License under AGPL. More information in [Document](LICENSE)
+License under AGPL. More information in [Document](LICENSE)  
+NOT WORKING NOW, WILL UPDATE README WHEN END REFACTOR
 
 ## Installation
 petit-api need composer. please install composer from [Official Download Site](https://getcomposer.org/download/).  
 before install, you can install required dependencies to `composer update`.
 
 ## Configure
-Edit `config.ini.example` and rename to `config.ini`, or make `config.ini` and edit this.
+Create `config.ini` with this form.
 ```ini
 [twitter]
 key = "your-awesome-consumer-key"
