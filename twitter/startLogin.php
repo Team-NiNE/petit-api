@@ -12,7 +12,7 @@ $request_token = $connection->oauth('oauth/request_token', ['oauth_callback' => 
 $oauth_token = $request_token['oauth_token'];
 $token_secret = $request_token['oauth_token_secret'];
 setcookie('oauth_token', $token_secret, time() + 60 * 10);
-setcookie('token_secret', $oauth_token, time() + 60 * 10);
+setcookie('token_secret', $token_secret, time() + 60 * 10);
 $_SESSION['oauth_token'] = $oauth_token;
 $_SESSION['token_secret'] = $token_secret;
 $url = $connection->url('oauth/authorize', ['oauth_token' => $oauth_token]);
